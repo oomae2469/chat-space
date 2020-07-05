@@ -1,0 +1,9 @@
+@mixin flex-side {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-vertical {
+display: flex;
+align-items: center;
+}

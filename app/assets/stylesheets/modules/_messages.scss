@@ -2,16 +2,6 @@
   box-sizing: border-box;
 }
 
-@mixin flex-side {
-    display: flex;
-    justify-content: space-between;
-}
-
-@mixin flex-vertical {
-  display: flex;
-  align-items: center;
-}
-
 .wrapper {
   display: flex;
   .Side-bar {
@@ -82,7 +72,6 @@
         }
         .right-box {
           padding-top: 28px;
-          text-decoration: none;
           .edit-btn {
             height: 40px;
             width: 72px;
@@ -91,7 +80,7 @@
             border: 1px solid;
             color: #38aef0;
             font-size: 16px;
-            text-decoration: none;   
+            text-decoration: none;
           }
         }
     }

@@ -6,7 +6,8 @@
         Member:
         %li.member masa
     .right-box
-      %a.edit-btn{:href => "#"} Edit
+      = link_to "#", class: "edit-btn" do
+        Edit
   .Chat-main__message-list
     .user-menu
       %p.user-name masa
@@ -20,8 +21,8 @@
       %p 今日は夜から雨
   .Chat-main__message-form
     .form-contents
-      %input.form{:placeholder => "type a message", :type => "text"}/ 
+      %input.form{placeholder: "type a message", type: "text"}/ 
       %label.input-box__image
         = icon('fas', 'image fa-2x')
         %input.file-form{type: "file"}
-    %input.form-btn{:type => "submit", :value => "Send"}/
+    %input.form-btn{type: "submit", value: "Send"}/

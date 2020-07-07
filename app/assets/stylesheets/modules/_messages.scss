@@ -18,16 +18,16 @@
         height: 20px;
         width: 260px;
         @include flex-side;
-        .icons {
+        .icons-list {
           height: 20px;
           width: 60px;
           display: flex;
           justify-content: flex-end;
-          .far.fa-edit {
-            margin-right: 5px;
-            color: #ffffff;
+          .btn-edit {
+          color: #ffffff;
+          margin-right: 5px;
           }
-          .fas.fa-cog {
+          .btn-cog {
             color: #ffffff;
           }
         }
@@ -40,6 +40,8 @@
       .group-logo {
         font-size: 15px;
         margin-bottom: 5px;
+        color: #ffffff;
+        text-decoration: none;
       }
       .group-message {
         font-size: 11px;

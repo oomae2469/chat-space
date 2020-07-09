@@ -12,6 +12,8 @@
             =icon('fas', 'cog')
   .Side-bar__group-list
     -current_user.groups.each do |group|
-      = link_to edit_group_path(group), class: "group-logo" do
-        = group.name
-        %p.group-message まだメッセージがありません
+      .group-logo
+        = link_to group_messages_path(group) do
+          = group.name
+      .group-message 
+        = group.show_last_message

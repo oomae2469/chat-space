@@ -23,5 +23,6 @@ module ChatSpace
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+    config.action_view.automatically_disable_submit_tag = false
   end
 end

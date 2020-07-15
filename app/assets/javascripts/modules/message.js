@@ -2,10 +2,31 @@ $(function(){
   function buildHTML(message){
     if ( message.image) {
       let html=
-        `<div class="MessageBox">
+        `<div class="MessageBox" data-message-id=${message.id}>
+          <div class="MessageBox">
+          <div class="MessageInfo">
+            <div class="MessageInfo__userName">
+              ${message.user.name}
+            </div>
+            <div class="MessageInfo__date">
+              ${message.created_at}
+            </div>
+          </div>
+          <div class="Message">
+            <p class="Message__content">
+              ${message.content}
+            </p>
+            <img class="Message__image" src="${message.image}">
+          </div>
+      </div>`
+    return html;
+    }else {
+      let html =
+      `<div class="MessageBox" data-message-id=${message.id}>
+        <div class="MessageBox">
         <div class="MessageInfo">
           <div class="MessageInfo__userName">
-            ${message.user.name}
+            ${message.user_name}
           </div>
           <div class="MessageInfo__date">
             ${message.created_at}
@@ -15,27 +36,8 @@ $(function(){
           <p class="Message__content">
             ${message.content}
           </p>
-          <img class="Message__image" src="${message.image}">
-        </div>
+          </div>
       </div>`
-    return html;
-    }else {
-      let html =
-      `<div class="MessageBox">
-      <div class="MessageInfo">
-        <div class="MessageInfo__userName">
-          ${message.user_name}
-        </div>
-        <div class="MessageInfo__date">
-          ${message.created_at}
-        </div>
-      </div>
-      <div class="Message">
-        <p class="Message__content">
-          ${message.content}
-        </p>
-      </div>
-    </div>`
     return html;
     };
   }
@@ -56,7 +58,6 @@ $(function(){
       $('.Chat-main__MessageField').append(html);
       $('.Chat-main__MessageField').animate({ scrollTop: $('.Chat-main__MessageField')[0].scrollHeight});
       $('form')[0].reset();
-      $('.form-btn').removeAttr("disabled");
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");

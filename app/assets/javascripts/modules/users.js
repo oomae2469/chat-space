@@ -20,11 +20,12 @@ $(function(){
 
   function addMember(userName, userId) {
     let html = `
-                <div class="ChatMember clearfix">
-                <p class="ChatMember__name">${userName}</p>
-                <div class="ChatMember__add ChatMember__button" data-user-id="${userId}" data-user-name="${userName}">削除</div>
-                </div>            
-               `;
+                  <div class="ChatMember">
+                  <p class="ChatMember__name">${userName}</p>
+                  <input name="group[user_ids][]" type="hidden" value="${userId}" />
+                  <div class="ChatMember__remove ChatMember__button">削除</div>
+                </div>
+                `;
     $(".ChatMembers").append(html);
   }
 
@@ -60,5 +61,6 @@ $(function(){
   });
   $(".ChatMembers").on("click", ".ChatMember__remove", function() {
     $(this).parent().remove();
+
   });
 });

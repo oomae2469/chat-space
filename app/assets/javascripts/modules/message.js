@@ -18,7 +18,7 @@ $(function(){
             </p>
             <img class="Message__image" src="${message.image}">
           </div>
-      </div>`
+        </div>`
     return html;
     }else {
       let html =
